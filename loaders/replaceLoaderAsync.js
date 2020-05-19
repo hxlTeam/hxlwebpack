@@ -7,5 +7,5 @@ module.exports = function(source) {
   setTimeout(() => {
     const result = source.replace('学良',options.name);
     callback(null, result);
-  }, 1000);
+  }, 300);
 }
