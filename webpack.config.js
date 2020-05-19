@@ -10,12 +10,15 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        use: {
-          loader: path.resolve(__dirname,'./loaders/replaceLoader.js'),
-          options: {
-            name: 'hxl'
+        use: [
+          path.resolve(__dirname,'./loaders/replaceLoader.js'),
+          {
+            loader: path.resolve(__dirname,'./loaders/replaceLoaderAsync.js'),
+            options: {
+              name: 'xl'
+            }
           }
-        }
+        ]
       }
     ]
   }
