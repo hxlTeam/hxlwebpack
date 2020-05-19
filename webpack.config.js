@@ -6,14 +6,18 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js'
   },
+  resolveLoader: {
+    modules: ['node_modules','./loaders']
+  },
   module: {
     rules: [
       {
         test: /\.js$/,
         use: [
-          path.resolve(__dirname,'./loaders/replaceLoader.js'),
+          // path.resolve(__dirname,'./loaders/replaceLoader.js'),
+          'replaceLoader',
           {
-            loader: path.resolve(__dirname,'./loaders/replaceLoaderAsync.js'),
+            loader: 'replaceLoaderAsync',
             options: {
               name: 'xl'
             }
